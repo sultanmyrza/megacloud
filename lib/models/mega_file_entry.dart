@@ -28,6 +28,14 @@ class MegaFileEntry {
     if (isDirectory) {
       return globals.FileTypeIcons.folder;
     }
+
+    // Для картинок скорее всего нужно будет подгружать из сервера а потом с кэша
+    if (getType() == MegaFileEntryType.image) {
+      // TODO: подгружать из реального сервера или кэша
+      return 'assets/images/sample_gallery_photos/${getFileName()}';
+    }
+
+    // Для статичных thumbnail которые может подгружать из assets/icons/..
     switch (getExtension()) {
       case 'ai':
         return globals.FileTypeIcons.ai;

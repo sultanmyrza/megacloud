@@ -51,7 +51,7 @@ class MegaFilesRepository {
 
     await Future.delayed(const Duration(seconds: 1));
 
-    var fileEntries = List<int>.generate(10, (i) => i + 1).map(
+    var fileEntries = List<int>.generate(40, (i) => (i + 1) % 10).map(
       (i) => MegaFileEntry(
         path: 'assets/images/sample_gallery_photos/sample_gallery_photo_$i.png',
         isDirectory: false,
