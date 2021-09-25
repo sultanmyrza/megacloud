@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:megacloud/globals.dart' as globals;
-import 'package:megacloud/pages/home_page/albums_tab.dart';
-import 'package:megacloud/pages/home_page/files_tab.dart';
-import 'package:megacloud/pages/home_page/photos_tab.dart';
-import 'package:megacloud/pages/home_page/trash_tab.dart';
+import 'package:megacloud/pages/home_page/tabs/albums_tab.dart';
+import 'package:megacloud/pages/home_page/tabs/files_tab.dart';
+import 'package:megacloud/pages/home_page/tabs/photos_tab.dart';
+import 'package:megacloud/pages/home_page/tabs/trash_tab.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
