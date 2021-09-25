@@ -47,10 +47,9 @@ class _CarouselBannerAdsState extends State<CarouselBannerAds> {
     );
   }
 
-  Container _buildCarouselItem(String imagePath) {
-    return Container(
+  Widget _buildCarouselItem(String imagePath) {
+    return SizedBox(
       width: double.infinity,
-      margin: const EdgeInsets.all(5.0),
       child: ClipRRect(
         borderRadius: const BorderRadius.all(Radius.circular(8.0)),
         child: Image.asset(

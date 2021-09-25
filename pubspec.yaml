@@ -66,8 +66,11 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets: 
     - assets/
+    # you can download icons pack in svg, png, ai formats at https://www.flaticon.com/packs/file-folder-13
+    - assets/icons/file-folder-13/svg/
     - assets/images/
     - assets/images/sample_banner_ads/
+    - assets/images/sample_gallery_photos/
     - assets/translations/
 
   # An image asset can refer to one or more resolution-specific "variants", see
