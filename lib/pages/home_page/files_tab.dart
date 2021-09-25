@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:megacloud/shared_widgets/carousel_banner_ads.dart';
 
 class FilesTab extends StatefulWidget {
   const FilesTab({Key? key}) : super(key: key);
@@ -10,6 +12,16 @@ class FilesTab extends StatefulWidget {
 class _FilesTabState extends State<FilesTab> {
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text("TODO: implement FilesTab"));
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          _buildCarouselBannerAds(context),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildCarouselBannerAds(BuildContext context) {
+    return const CarouselBannerAds();
   }
 }
