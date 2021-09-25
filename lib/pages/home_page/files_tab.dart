@@ -15,13 +15,9 @@ class _FilesTabState extends State<FilesTab> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          _buildCarouselBannerAds(context),
+          const CarouselBannerAds(),
         ],
       ),
     );
-  }
-
-  Widget _buildCarouselBannerAds(BuildContext context) {
-    return const CarouselBannerAds();
   }
 }
