@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:megacloud/globals.dart' as globals;
+import 'package:megacloud/pages/home_page/albums_tab.dart';
 import 'package:megacloud/pages/home_page/files_tab.dart';
+import 'package:megacloud/pages/home_page/photos_tab.dart';
+import 'package:megacloud/pages/home_page/trash_tab.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -52,32 +55,18 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: _selectedIndex == 0
-          ? const FilesTab()
-          : Center(child: Text("TODO implement tab for $_selectedIndex")),
+      body: _buildBody(context),
       // TODO: rewrite with tab bar view if needed example brainfood app
       bottomNavigationBar: BottomNavigationBar(
+        // TODO: add translations
         items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.folder), label: 'Files'),
+          BottomNavigationBarItem(icon: Icon(Icons.photo), label: 'Photos'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.folder),
-            // TODO: add translations
-            label: 'Files',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.photo),
-            // TODO: add translations
-            label: 'Photos',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.photo_library_outlined),
-            // TODO: add translations
+            icon: Icon(Icons.photo_library),
             label: 'Albums',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.delete_forever_outlined),
-            // TODO: add translations
-            label: 'Trash',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.delete), label: 'Trash'),
         ],
         type: BottomNavigationBarType.fixed,
         // TODO: change selectedItemColor to more distinguishable color
@@ -88,5 +77,25 @@ class _HomePageState extends State<HomePage> {
         onTap: _onItemTapped,
       ),
     );
+  }
+
+  Widget _buildBody(BuildContext context) {
+    // TODO: rewrite with tab bar view if needed example brainfood app
+    if (_selectedIndex == 0) {
+      return const FilesTab();
+    }
+    if (_selectedIndex == 1) {
+      return const PhotosTab();
+    }
+
+    if (_selectedIndex == 2) {
+      return const AlbumsTab();
+    }
+
+    if (_selectedIndex == 3) {
+      return const TrashTab();
+    }
+
+    return Center(child: Text("TODO implement tab for $_selectedIndex"));
   }
 }
