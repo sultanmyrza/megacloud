@@ -1,4 +1,7 @@
+import 'package:uuid/uuid.dart';
+
 class MegaAlbum {
+  String id;
   String title;
   String thumbnailUrl;
   int itemsCount;
@@ -6,11 +9,13 @@ class MegaAlbum {
   DateTime updated;
 
   MegaAlbum({
+    String? id,
     required this.title,
     required this.thumbnailUrl,
     required this.itemsCount,
     DateTime? created,
     DateTime? updated,
-  })  : created = created ?? DateTime.now(),
+  })  : id = id ?? const Uuid().v4(),
+        created = created ?? DateTime.now(),
         updated = updated ?? DateTime.now();
 }

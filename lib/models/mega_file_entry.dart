@@ -1,19 +1,23 @@
 import 'package:megacloud/globals.dart' as globals;
+import 'package:uuid/uuid.dart';
 
 enum MegaFileEntryType { video, image, directory, pdf, audio, unknowDocument }
 
 class MegaFileEntry {
+  String id;
   String path; // example: some/sub/folder/file-name.mp4
   bool isDirectory;
   DateTime created;
   DateTime updated;
 
   MegaFileEntry({
+    String? id,
     required this.path,
     required this.isDirectory,
     DateTime? created,
     DateTime? updated,
-  })  : created = created ?? DateTime.now(),
+  })  : id = id ?? const Uuid().v4(),
+        created = created ?? DateTime.now(),
         updated = updated ?? DateTime.now();
 
   String getFileName() {

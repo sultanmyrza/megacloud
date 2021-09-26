@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:megacloud/models/mega_album.dart';
 import 'package:megacloud/repositories/mega_files_repository.dart';
 import 'package:megacloud/shared_widgets/carousel_banner_ads.dart';
+import 'package:megacloud/globals.dart' as globals;
 
 class AlbumsTab extends StatefulWidget {
   const AlbumsTab({Key? key}) : super(key: key);
@@ -24,16 +25,57 @@ class _AlbumsTabState extends State<AlbumsTab> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: CustomScrollView(
-        slivers: [
-          const SliverToBoxAdapter(child: CarouselBannerAds()),
-          const SliverToBoxAdapter(child: SizedBox(height: 8)),
-          _buildFetchingStatus(context),
-          const SliverToBoxAdapter(child: SizedBox(height: 8)),
-          _buildFilesGrid(context),
-        ],
+    return CustomScrollView(
+      slivers: [
+        _buildAppBar(context),
+        _buildCarouselBannerAds(context),
+        const SliverToBoxAdapter(child: SizedBox(height: 8)),
+        _buildFetchingStatus(context),
+        const SliverToBoxAdapter(child: SizedBox(height: 8)),
+        _buildFilesGrid(context),
+      ],
+    );
+  }
+
+  SliverAppBar _buildAppBar(BuildContext context) {
+    return SliverAppBar(
+      pinned: true,
+      actions: [
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.done),
+          color: Colors.grey,
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.search),
+          color: Colors.grey,
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.more_vert_outlined),
+          color: Colors.grey,
+        ),
+      ],
+      leading: IconButton(
+        icon: const Icon(Icons.settings_outlined),
+        onPressed: () {},
+        color: Colors.black,
+      ),
+      title: Text(
+        globals.phone,
+        style: const TextStyle(color: Colors.black),
+      ),
+      backgroundColor: Colors.white,
+      elevation: 0,
+    );
+  }
+
+  SliverToBoxAdapter _buildCarouselBannerAds(BuildContext context) {
+    return const SliverToBoxAdapter(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 8.0),
+        child: CarouselBannerAds(),
       ),
     );
   }

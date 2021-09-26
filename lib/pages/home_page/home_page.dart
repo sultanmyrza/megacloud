@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:megacloud/globals.dart' as globals;
 import 'package:megacloud/pages/home_page/tabs/albums_tab.dart';
 import 'package:megacloud/pages/home_page/tabs/files_tab.dart';
-import 'package:megacloud/pages/home_page/tabs/photos_tab.dart';
+import 'package:megacloud/pages/home_page/tabs/photos_tab/photos_tab.dart';
 import 'package:megacloud/pages/home_page/tabs/trash_tab.dart';
 
 class HomePage extends StatefulWidget {
@@ -28,33 +28,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.done),
-            color: Colors.grey,
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.search),
-            color: Colors.grey,
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.more_vert_outlined),
-            color: Colors.grey,
-          )
-        ],
-        leading: IconButton(
-          icon: const Icon(Icons.settings_outlined),
-          onPressed: () {},
-          color: Colors.black,
-        ),
-        title: Text(globals.phone, style: const TextStyle(color: Colors.black)),
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
       body: _buildBody(context),
       // TODO: rewrite with tab bar view if needed example brainfood app
       bottomNavigationBar: BottomNavigationBar(
