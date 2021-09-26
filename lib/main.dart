@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:megacloud/pages/authentication_page/one_time_pin_page.dart';
+import 'package:megacloud/pages/authentication_page/sign_in_page.dart';
 import 'package:megacloud/pages/home_page/home_page.dart';
 
 Future<void> main() async {
@@ -28,7 +29,7 @@ class MegaCloudApp extends StatelessWidget {
     return MaterialApp(
       title: 'Megacloud MVP 1.0',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const HomePage(),
+      home: const SignInPage(),
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,

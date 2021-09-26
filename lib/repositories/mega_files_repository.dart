@@ -79,12 +79,12 @@ class MegaFilesRepository {
       MegaAlbum(
         title: 'Видео',
         itemsCount: 12,
-        thumbnailUrl: '$assetPath/sample_gallery_photo_0.png',
+        thumbnailUrl: '$assetPath/sample_gallery_photo_1.png',
       ),
       MegaAlbum(
         title: 'Загрузки',
         itemsCount: 12,
-        thumbnailUrl: '$assetPath/sample_gallery_photo_0.png',
+        thumbnailUrl: '$assetPath/sample_gallery_photo_2.png',
       ),
     ];
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:megacloud/globals.dart' as globals;
+import 'package:megacloud/pages/authentication_page/one_time_pin_page.dart';
 import 'package:megacloud/pages/authentication_page/sign_up_page.dart';
 
 import 'package:megacloud/shared_widgets/mega_cloud_logo.dart';
@@ -77,7 +78,8 @@ class _SignInPageState extends State<SignInPage> {
                       child: const Text('next').tr(),
                       onPressed: _isDisable
                           ? () {
-                              // TODO: navigate to otp page
+                              Navigator.of(context)
+                                  .push(OneTimePinPage.route());
                             }
                           : null,
                     ),

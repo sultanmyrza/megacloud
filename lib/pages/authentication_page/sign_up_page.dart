@@ -4,6 +4,8 @@ import 'package:megacloud/globals.dart' as globals;
 import 'package:megacloud/shared_widgets/mega_cloud_logo.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
+import 'one_time_pin_page.dart';
+
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
 
@@ -79,7 +81,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       child: const Text('next').tr(),
                       onPressed: _isDisable
                           ? () {
-                              // TODO: navigate to otp page
+                              Navigator.of(context)
+                                  .push(OneTimePinPage.route());
                             }
                           : null,
                     ),
