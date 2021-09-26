@@ -1,6 +1,7 @@
 // it's singleton you can read https://stackoverflow.com/a/63129052/6133329
 import 'dart:math';
 
+import 'package:megacloud/models/mega_album.dart';
 import 'package:megacloud/models/mega_file_entry.dart';
 
 class MegaFilesRepository {
@@ -61,10 +62,32 @@ class MegaFilesRepository {
     return fileEntries.toList();
   }
 
-  // TODO: define album data interface
-  Future<List<dynamic>> fetchAlbums({
+  Future<List<MegaAlbum>> fetchAlbums({
     String userId = "some user id",
   }) async {
-    throw UnimplementedError();
+    // TODO: fetch from real service
+
+    await Future.delayed(const Duration(seconds: 1));
+
+    var assetPath = 'assets/images/sample_gallery_photos';
+    var dumbAlbums = [
+      MegaAlbum(
+        title: 'Скриншоты',
+        itemsCount: 220,
+        thumbnailUrl: '$assetPath/sample_gallery_photo_0.png',
+      ),
+      MegaAlbum(
+        title: 'Видео',
+        itemsCount: 12,
+        thumbnailUrl: '$assetPath/sample_gallery_photo_0.png',
+      ),
+      MegaAlbum(
+        title: 'Загрузки',
+        itemsCount: 12,
+        thumbnailUrl: '$assetPath/sample_gallery_photo_0.png',
+      ),
+    ];
+
+    return dumbAlbums;
   }
 }
